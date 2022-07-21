@@ -17,3 +17,11 @@ C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\
 C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\obj\Debug\net5.0-windows\Quanlyquancafe.pdb
 C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\obj\Debug\net5.0-windows\Quanlyquancafe.genruntimeconfig.cache
 C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\obj\Debug\net5.0-windows\Quanlyquancafe.frmLogin.resources
+C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\bin\Debug\net5.0-windows\System.Data.SqlClient.dll
+C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\bin\Debug\net5.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\bin\Debug\net5.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\bin\Debug\net5.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\obj\Debug\net5.0-windows\Quanlyquancafe.csproj.CopyComplete
+C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\obj\Debug\net5.0-windows\Quanlyquancafe.frmMain.resources
