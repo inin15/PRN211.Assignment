@@ -5,7 +5,6 @@ C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\
 C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\bin\Debug\net5.0-windows\Quanlyquancafe.dll
 C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\bin\Debug\net5.0-windows\ref\Quanlyquancafe.dll
 C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\bin\Debug\net5.0-windows\Quanlyquancafe.pdb
-C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\obj\Debug\net5.0-windows\Quanlyquancafe.csproj.AssemblyReference.cache
 C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\obj\Debug\net5.0-windows\Quanlyquancafe.Properties.Resources.resources
 C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\obj\Debug\net5.0-windows\Quanlyquancafe.csproj.GenerateResource.cache
 C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\obj\Debug\net5.0-windows\Quanlyquancafe.GeneratedMSBuildEditorConfig.editorconfig
@@ -25,3 +24,12 @@ C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\
 C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\obj\Debug\net5.0-windows\Quanlyquancafe.csproj.CopyComplete
 C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\obj\Debug\net5.0-windows\Quanlyquancafe.frmMain.resources
+C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\obj\Debug\net5.0-windows\Quanlyquancafe.Account.resources
+C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\obj\Debug\net5.0-windows\Quanlyquancafe.AddFood.resources
+C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\obj\Debug\net5.0-windows\Quanlyquancafe.ChangePersional.resources
+C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\obj\Debug\net5.0-windows\Quanlyquancafe.frmAddCategory.resources
+C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\obj\Debug\net5.0-windows\Quanlyquancafe.frmAddFood.resources
+C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\obj\Debug\net5.0-windows\Quanlyquancafe.frmAddTables.resources
+C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\obj\Debug\net5.0-windows\Quanlyquancafe.Pay.resources
+C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\obj\Debug\net5.0-windows\Quanlyquancafe.ReFood.resources
+C:\Users\Admin\Documents\GitHub\PRN211.Assignment\Quanlyquancafe\Quanlyquancafe\obj\Debug\net5.0-windows\Quanlyquancafe.csproj.AssemblyReference.cache

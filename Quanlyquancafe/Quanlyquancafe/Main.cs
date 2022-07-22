@@ -19,6 +19,9 @@ namespace Quanlyquancafe
         public frmMain()
         {
             InitializeComponent();
+            //Load nhanh danh sach ban va thuc don
+            loaddataTable();
+            loaddataCategory();
         }
 
         public frmMain(string user, string name, string pass, string type) : this()
@@ -32,7 +35,11 @@ namespace Quanlyquancafe
                 tmiAdmin.Visible = true;
             }
         }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
+        }
+        
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn thoát?", "Thoát", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK)
@@ -202,12 +209,339 @@ namespace Quanlyquancafe
             {
             }
         }
+
+        private void btnAddFood_Click(object sender, EventArgs e)
+        {
+            AddFood();
+        }
+        private void AddFood()
+        {
+            try
+            {
+                if (txtSTT.Text == "ONLINE")
+                {
+                    AddFood addF = new AddFood(txtNameTable.Text, txtNameFood.Text, txtSTT.Text);
+                    addF.ShowDialog();
+                    this.Show();
+                    loaddataTable();
+                    loaddataBill();
+                }
+                else if (txtSTT.Text == "DATTRUOC")
+                {
+                    MessageBox.Show("Bàn đã được đặt", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (txtSTT.Text == "TRONG")
+                {
+                    DialogResult ms = MessageBox.Show("Bàn này đang trống. Mở bàn nhé?", "Lỗi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (ms == DialogResult.Yes)
+                    {
+                        AddFood addF = new AddFood(txtNameTable.Text, txtNameFood.Text, txtSTT.Text);
+                        addF.ShowDialog();
+                        this.Show();
+                        loaddataTable();
+                        loaddataBill();
+                    }
+                }
+            }
+            catch { }
+        }
+
+        //     Media
+        string[] filenames, filepaths;
+        private void btnAddMedia_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ofdMedia.ShowDialog() == DialogResult.OK)
+                {
+                    //Mang file name se hung tat ca ten
+                    filenames = ofdMedia.SafeFileNames;
+                    //Mang file path se hung tat ca duong dan file
+                    filepaths = ofdMedia.FileNames;
+                    //Them file name vao listview
+                    lbMedia.Items.Clear();
+                    foreach (String file in filenames)
+                    {
+                        lbMedia.Items.Add(file);
+                    }
+                }
+            }
+            catch { }
+        }
+
+        private void txtNameMan_Click(object sender, EventArgs e)
+        {
+
+        }
+        //Ham xu ly Category
+
+        private void tmiCategory_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmAddCategory frm = new frmAddCategory();
+                frm.ShowDialog();
+                this.Show();
+                loaddataCategory();
+            }
+            catch { }
+        }
+        //di den quan ly food
+        private void tmiFood_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmAddFood frm = new frmAddFood();
+                frm.ShowDialog();
+                this.Show();
+                loaddataCategory();
+            }
+            catch { }
+        }
+        //di den quan ly table
+        private void tmiTable_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmAddTables frm = new frmAddTables();
+                frm.ShowDialog();
+                this.Show();
+                loaddataTable();
+            }
+            catch { }
+        }
+        //di den thang Account
+        private void tmiAccount1_Click(object sender, EventArgs e)
+        {
+           
+                try
+                {
+                    Account frm = new Account();
+                    frm.ShowDialog();
+                    this.Show();
+                }
+                catch { }
+            }
+        //Neu kich thuoc table thay doi thi load lai table cho phu hop
+        private void gpbTable_SizeChanged(object sender, EventArgs e)
+        {
+            loaddataTable();
+        }
+
+        private void gpbTable_Enter(object sender, EventArgs e)
+        {
+
+        }
+        //Nhan nut thanh toan
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            PayFood();
+        }
+        private void PayFood()
+        {
+            try
+            {
+                if (txtSTT.Text == "ONLINE")
+                {
+                    Pay addF = new Pay(txtNameTable.Text);
+                    addF.ShowDialog();
+                    this.Show();
+                    loaddataTable();
+                    loaddataBill();
+                }
+                else if (txtSTT.Text == "DATTRUOC")
+                {
+                    MessageBox.Show("Bàn đã được đặt", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (txtSTT.Text == "TRONG")
+                {
+                    MessageBox.Show("Bàn này đang trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch { }
+        }
+        //tra mon
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+
+            ReturnFood();
+        }
+        private void ReturnFood()
+        {
+            try
+            {
+                if (txtSTT.Text == "ONLINE")
+                {
+                    ReFood addF = new ReFood(txtNameTable.Text);
+                    addF.ShowDialog();
+                    this.Show();
+                    loaddataTable();
+                    loaddataBill();
+                }
+                else if (txtSTT.Text == "DATTRUOC")
+                {
+                    MessageBox.Show("Bàn đã được đặt", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (txtSTT.Text == "TRONG")
+                {
+                    MessageBox.Show("Bàn này đang trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch { }
+        }
+
+        //Sua tai khoan
+        private void tmiChange_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ChangePersional addF = new ChangePersional(username, lblName.Text, password);
+                addF.ShowDialog();
+                this.Show();
+                loaddataTable();
+                loaddataBill();
+            }
+            catch
+            {
+                MessageBox.Show("Không thể thay đổi thông tin!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        //Logout
+        private void tmiLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        //menu context SubTable
+        private void tsmThemMon_Click(object sender, EventArgs e)
+        {
+            AddFood();
+        }
+
+        private void tsmTraMon_Click(object sender, EventArgs e)
+        {
+            ReturnFood();
+        }
+
+        private void tsmThanhToan_Click(object sender, EventArgs e)
+        {
+            PayFood();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+        //load context menu ban online
+        private void cmnSubTable_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+        //Context Menu ban trong
+        private void cmnSubTable2_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void tmsThemMon2_Click(object sender, EventArgs e)
+        {
+            AddFood();
+        }
+        //Dat ban
+        private void tsmDatBan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DBContext context = new DBContext();
+                context.Datban("DATTRUOC", txtNameTable.Text);
+                loaddataTable();
+            }
+            catch { }
+        }
+        //Context Menu ban trong
+        private void cmnSubTable3_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+        //Mo ban
+        private void tsmMoBan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DBContext context = new DBContext();
+                context.Datban("TRONG", txtNameTable.Text);
+                loaddataTable();
+            }
+            catch { }
+        }
+
+        private void lbMedia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+                //wmpMedia.URL = filepaths[lbMedia.SelectedIndex];
+            }
+            catch
+            { }
+        }
+        //PrintDocument
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            //Chuoi hoa don
+            string HoaDon = "";
+            HoaDon += "\n" + txtNameMan.Text + "\n";
+            HoaDon += "\n" + txtAdress.Text + "\n\n\n";
+            HoaDon += "\n" + "           HÓA ĐƠN " + txtNameTable.Text + "        \n\n\n";
+            HoaDon += strBill;
+            HoaDon += "\n\n\nThời gian: " + datetime.Value.ToShortTimeString() + ". " + datetime.Value.ToShortDateString() + "\n";
+            HoaDon += "\nTổng cộng: " + txtTotal.Text + " VNĐ\n";
+            e.Graphics.DrawString(HoaDon, new Font("Arial", 15, FontStyle.Bold), Brushes.Black, 100, 200);
+        }
+        //In hoa don
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                printDialog1.Document = printDocument1;
+                if (printDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    printDocument1.Print();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Không thể in hóa đơn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        { }
+        private void openFileDialog1_FileOk(object sender, EventArgs e)
+        { }
+        //Dong mo danh sach nhac
+        private void btnMedia_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (lbMedia.Visible == true)
+                {
+                    lbMedia.Visible = false;
+                }
+                else
+                {
+                    lbMedia.Visible = true;
+                }
+            }
+            catch { }
+        }
         private void btnTable_MouseHover(object sender, EventArgs e)
         {
             ClickTable(sender, e);
         }
 
         //Su kien Mouseclick vao btnTABLE
+
+
         private void btnTable_MouseClick(object sender, EventArgs e)
         {
             ClickTable(sender, e);
@@ -249,416 +583,19 @@ namespace Quanlyquancafe
             txtPriceFood.Text = ((Button)sender).Tag.ToString();
         }
 
-        //Ham xu ly Category
-        private void tmiCategory_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                frmAddCategory frm = new frmAddCategory();
-                frm.ShowDialog();
-                this.Show();
-                loaddataCategory();
-            }
-            catch { }
-        }
 
-        //di den quan ly food
-        private void tmiFood_Click(object sender, EventArgs e)
+        //Su kien thoat from
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            try
+            if (MessageBox.Show("Bạn có muốn thoát?", "Thoát", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK)
             {
-                frmAddFood frm = new frmAddFood();
-                frm.ShowDialog();
-                this.Show();
-                loaddataCategory();
-            }
-            catch { }
-        }
-
-        //di den quan ly table
-        private void tmiTable_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                frmAddTables frm = new frmAddTables();
-                frm.ShowDialog();
-                this.Show();
-                loaddataTable();
-            }
-            catch { }
-        }
-
-        //di den thang Account
-        private void tmiAccount_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Account frm = new Account();
-                frm.ShowDialog();
-                this.Show();
-            }
-            catch { }
-        }
-
-        //Neu kich thuoc table thay doi thi load lai table cho phu hop
-        private void gpbTable_SizeChanged(object sender, EventArgs e)
-        {
-            loaddataTable();
-        }
-
-
-        //Su kien nhan button them mon
-        private void btnAddFood_Click(object sender, EventArgs e)
-        {
-            AddFood();
-        }
-        private void AddFood()
-        {
-            try
-            {
-                if (txtSTT.Text == "ONLINE")
-                {
-                    AddFood addF = new AddFood(txtNameTable.Text, txtNameFood.Text, txtSTT.Text);
-                    addF.ShowDialog();
-                    this.Show();
-                    loaddataTable();
-                    loaddataBill();
-                }
-                else if (txtSTT.Text == "DATTRUOC")
-                {
-                    MessageBox.Show("Bàn đã được đặt", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else if (txtSTT.Text == "TRONG")
-                {
-                    DialogResult ms = MessageBox.Show("Bàn này đang trống. Mở bàn nhé?", "Lỗi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (ms == DialogResult.Yes)
-                    {
-                        AddFood addF = new AddFood(txtNameTable.Text, txtNameFood.Text, txtSTT.Text);
-                        addF.ShowDialog();
-                        this.Show();
-                        loaddataTable();
-                        loaddataBill();
-                    }
-                }
-            }
-            catch { }
-        }
-
-        //Nhan nut thanh toan
-        private void btnPay_Click(object sender, EventArgs e)
-        {
-            PayFood();
-        }
-        private void PayFood()
-        {
-            try
-            {
-                if (txtSTT.Text == "ONLINE")
-                {
-                    Pay addF = new Pay(txtNameTable.Text);
-                    addF.ShowDialog();
-                    this.Show();
-                    loaddataTable();
-                    loaddataBill();
-                }
-                else if (txtSTT.Text == "DATTRUOC")
-                {
-                    MessageBox.Show("Bàn đã được đặt", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else if (txtSTT.Text == "TRONG")
-                {
-                    MessageBox.Show("Bàn này đang trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            catch { }
-        }
-
-        //Nut chuyen ban
-       /* private void btnReplaceTable_Click(object sender, EventArgs e)
-        {
-            ReplaceTable();
-        }
-        private void ReplaceTable()
-        {
-            try
-            {
-                if (txtSTT.Text == "ONLINE")
-                {
-                    ReplaceTable addF = new ReplaceTable(txtNameTable.Text);
-                    addF.ShowDialog();
-                    this.Show();
-                    loaddataTable();
-                    loaddataBill();
-                }
-                else if (txtSTT.Text == "DATTRUOC")
-                {
-                    MessageBox.Show("Bàn đã được đặt", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else if (txtSTT.Text == "TRONG")
-                {
-                    MessageBox.Show("Bàn này đang trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            catch { }
-        }
-
-        //Gop ban
-        private void btnPlusTable_Click(object sender, EventArgs e)
-        {
-            PlusTable();
-        }
-        private void PlusTable()
-        {
-            try
-            {
-                if (txtSTT.Text == "ONLINE")
-                {
-                    PlusTable addF = new PlusTable(txtNameTable.Text);
-                    addF.ShowDialog();
-                    this.Show();
-                    loaddataTable();
-                    loaddataBill();
-                }
-                else if (txtSTT.Text == "DATTRUOC")
-                {
-                    MessageBox.Show("Bàn đã được đặt", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else if (txtSTT.Text == "TRONG")
-                {
-                    MessageBox.Show("Bàn này đang trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            catch { }
-        }*/
-
-        //Tra mon
-        private void btnReturn_Click(object sender, EventArgs e)
-        {
-            ReturnFood();
-        }
-        private void ReturnFood()
-        {
-            try
-            {
-                if (txtSTT.Text == "ONLINE")
-                {
-                    ReFood addF = new ReFood(txtNameTable.Text);
-                    addF.ShowDialog();
-                    this.Show();
-                    loaddataTable();
-                    loaddataBill();
-                }
-                else if (txtSTT.Text == "DATTRUOC")
-                {
-                    MessageBox.Show("Bàn đã được đặt", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else if (txtSTT.Text == "TRONG")
-                {
-                    MessageBox.Show("Bàn này đang trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            catch { }
-        }
-
-       /* //Khoa man hinh
-        private void btnBlock_Click(object sender, EventArgs e)
-        {
-            Block addF = new Block(username, lblName.Text, password);
-            addF.ShowDialog();
-            this.Show();
-        }*/
-
-        //In hoa don
-        private void btnPrint_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                printDialog1.Document = printDocument1;
-                if (printDialog1.ShowDialog() == DialogResult.OK)
-                {
-                    printDocument1.Print();
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Không thể in hóa đơn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        //PrintDocument
-        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-            //Chuoi hoa don
-            string HoaDon = "";
-            HoaDon += "\n" + txtNameMan.Text + "\n";
-            HoaDon += "\n" + txtAdress.Text + "\n\n\n";
-            HoaDon += "\n" + "           HÓA ĐƠN " + txtNameTable.Text + "        \n\n\n";
-            HoaDon += strBill;
-            HoaDon += "\n\n\nThời gian: " + datetime.Value.ToShortTimeString() + ". " + datetime.Value.ToShortDateString() + "\n";
-            HoaDon += "\nTổng cộng: " + txtTotal.Text + " VNĐ\n";
-            e.Graphics.DrawString(HoaDon, new Font("Arial", 15, FontStyle.Bold), Brushes.Black, 100, 200);
-        }
-
-        //Sua tai khoan
-        private void tmiChange_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ChangePersional addF = new ChangePersional(username, lblName.Text, password);
-                addF.ShowDialog();
-                this.Show();
-                loaddataTable();
-                loaddataBill();
-            }
-            catch
-            {
-                MessageBox.Show("Không thể thay đổi thông tin!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Cancel = true;
             }
         }
 
 
-        //Logout
-        private void tmiLogout_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
 
-        //load context menu ban online
-        private void cmnSubTable_Opening(object sender, CancelEventArgs e)
-        {
-        }
-        //menu context SubTable
-        private void tsmThemMon_Click(object sender, EventArgs e)
-        {
-            AddFood();
-        }
-        private void tsmTraMon_Click(object sender, EventArgs e)
-        {
-            ReturnFood();
-        }
-        private void tsmThanhToan_Click(object sender, EventArgs e)
-        {
-            PayFood();
-        }
-        private void tsmChuyenBan_Click(object sender, EventArgs e)
-        {
-            //ReplaceTable();
-        }
-        private void tsmGopBan_Click(object sender, EventArgs e)
-        {
-            //PlusTable();
-        }
-
-
-        //Context Menu ban trong
-        private void cmnSubTable2_Opening(object sender, CancelEventArgs e)
-        {
-        }
-        private void tmsThemMon2_Click(object sender, EventArgs e)
-        {
-            AddFood();
-        }
-        //Dat ban
-        private void tsmDatBan_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DBContext context = new DBContext();
-                context.Datban("DATTRUOC", txtNameTable.Text);
-                loaddataTable();
-            }
-            catch { }
-        }
-
-
-        //Context Menu ban trong
-        private void cmnSubTable3_Opening(object sender, CancelEventArgs e)
-        {
-        }
-        //Mo ban
-        private void tsmMoBan_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DBContext context = new DBContext();
-                context.Datban("TRONG", txtNameTable.Text);
-                loaddataTable();
-            }
-            catch { }
-        }
-
-
-
-        //     Media
-        string[] filenames, filepaths;
-        private void btnAddMedia_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (ofdMedia.ShowDialog() == DialogResult.OK)
-                {
-                    //Mang file name se hung tat ca ten
-                    filenames = ofdMedia.SafeFileNames;
-                    //Mang file path se hung tat ca duong dan file
-                    filepaths = ofdMedia.FileNames;
-                    //Them file name vao listview
-                    lbMedia.Items.Clear();
-                    foreach (String file in filenames)
-                    {
-                        lbMedia.Items.Add(file);
-                    }
-                }
-            }
-            catch { }
-        }
-       
-
-        private void txtNameMan_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbMedia_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                wmpMedia.URL = filepaths[lbMedia.SelectedIndex];
-            }
-            catch
-            { }
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        //Dong mo danh sach nhac
-        private void btnMedia_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (lbMedia.Visible == true)
-                {
-                    lbMedia.Visible = false;
-                }
-                else
-                {
-                    lbMedia.Visible = true;
-                }
-            }
-            catch { }
-        }
     }
-
-
-
 }
 

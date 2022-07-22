@@ -16,7 +16,7 @@ namespace Quanlyquancafe
         {
             try
             {
-                connection.ConnectionString = @"Data Source=ADMIN\\SQLEXPRESSS;Initial Catalog=QL_QUANCAFE;Integrated Security=True";
+                connection.ConnectionString = @"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=QL_QUANCAFE;Integrated Security=True";
                 connection.Open();
             }
             catch { }

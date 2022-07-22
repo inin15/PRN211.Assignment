@@ -56,7 +56,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(19, 17);
+            this.groupBox1.Location = new System.Drawing.Point(18, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(502, 186);
             this.groupBox1.TabIndex = 0;
@@ -74,7 +74,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(375, 124);
+            this.btnSua.Location = new System.Drawing.Point(375, 108);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(112, 34);
             this.btnSua.TabIndex = 8;
@@ -84,7 +84,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(371, 82);
+            this.btnXoa.Location = new System.Drawing.Point(375, 65);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(112, 34);
             this.btnXoa.TabIndex = 7;
@@ -94,7 +94,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(368, 35);
+            this.btnAdd.Location = new System.Drawing.Point(375, 24);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(112, 34);
             this.btnAdd.TabIndex = 6;
@@ -104,21 +104,21 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(131, 117);
+            this.txtPassword.Location = new System.Drawing.Point(131, 102);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(150, 31);
             this.txtPassword.TabIndex = 5;
             // 
             // txtDisplayname
             // 
-            this.txtDisplayname.Location = new System.Drawing.Point(130, 74);
+            this.txtDisplayname.Location = new System.Drawing.Point(132, 64);
             this.txtDisplayname.Name = "txtDisplayname";
             this.txtDisplayname.Size = new System.Drawing.Size(150, 31);
             this.txtDisplayname.TabIndex = 4;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(123, 30);
+            this.txtUsername.Location = new System.Drawing.Point(131, 24);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(150, 31);
             this.txtUsername.TabIndex = 3;
@@ -126,7 +126,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 102);
+            this.label3.Location = new System.Drawing.Point(17, 108);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 25);
             this.label3.TabIndex = 2;
@@ -135,7 +135,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 67);
+            this.label2.Location = new System.Drawing.Point(17, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 25);
             this.label2.TabIndex = 1;
@@ -144,7 +144,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 31);
+            this.label1.Location = new System.Drawing.Point(17, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 25);
             this.label1.TabIndex = 0;

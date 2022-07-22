@@ -36,6 +36,8 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.rdbAdmin = new System.Windows.Forms.RadioButton();
+            this.rdbCashier = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,11 +96,33 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(196, 25);
+            this.pictureBox1.Location = new System.Drawing.Point(259, 53);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(385, 191);
+            this.pictureBox1.Size = new System.Drawing.Size(237, 132);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
+            // 
+            // rdbAdmin
+            // 
+            this.rdbAdmin.AutoSize = true;
+            this.rdbAdmin.Location = new System.Drawing.Point(575, 267);
+            this.rdbAdmin.Name = "rdbAdmin";
+            this.rdbAdmin.Size = new System.Drawing.Size(93, 29);
+            this.rdbAdmin.TabIndex = 7;
+            this.rdbAdmin.TabStop = true;
+            this.rdbAdmin.Text = "Quản lí";
+            this.rdbAdmin.UseVisualStyleBackColor = true;
+            // 
+            // rdbCashier
+            // 
+            this.rdbCashier.AutoSize = true;
+            this.rdbCashier.Location = new System.Drawing.Point(575, 311);
+            this.rdbCashier.Name = "rdbCashier";
+            this.rdbCashier.Size = new System.Drawing.Size(114, 29);
+            this.rdbCashier.TabIndex = 8;
+            this.rdbCashier.TabStop = true;
+            this.rdbCashier.Text = "Thu Ngân";
+            this.rdbCashier.UseVisualStyleBackColor = true;
             // 
             // frmLogin
             // 
@@ -106,6 +130,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(719, 450);
+            this.Controls.Add(this.rdbCashier);
+            this.Controls.Add(this.rdbAdmin);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogin);
@@ -130,5 +156,7 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RadioButton rdbAdmin;
+        private System.Windows.Forms.RadioButton rdbCashier;
     }
 }

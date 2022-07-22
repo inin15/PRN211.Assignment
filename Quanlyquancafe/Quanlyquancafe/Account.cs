@@ -121,5 +121,13 @@ namespace Quanlyquancafe
                 MessageBox.Show("Không sửa được!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        //Su kien thoat from
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn thoát?", "Thoát", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }
