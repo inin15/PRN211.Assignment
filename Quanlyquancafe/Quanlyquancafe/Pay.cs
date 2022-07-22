@@ -66,13 +66,13 @@ namespace Quanlyquancafe
             }
 
         }
-
+        //nhan nut chap nhan thanh toan
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
             DialogResult ms = MessageBox.Show("Bạn có muốn thanh toán " + txtNameTable.Text + "\nTổng tiền: " + txtTotal.Text + " VNĐ", "Xác nhận", MessageBoxButtons.YesNoCancel, MessageBoxIcon.None);
             if (ms == DialogResult.Yes)
             {
-                //Tih tien
+                //Tinh tien
                 setTableNull();
                 deleteBill();
                 MessageBox.Show("Đã thanh toán " + txtNameTable.Text, "Xong", MessageBoxButtons.OK, MessageBoxIcon.Information);

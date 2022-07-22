@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.nudCount = new System.Windows.Forms.NumericUpDown();
-            this.cbbFood = new System.Windows.Forms.ComboBox();
-            this.txtBan = new System.Windows.Forms.TextBox();
             this.txtSTT = new System.Windows.Forms.TextBox();
+            this.txtBan = new System.Windows.Forms.TextBox();
+            this.cbbFood = new System.Windows.Forms.ComboBox();
+            this.nudCount = new System.Windows.Forms.NumericUpDown();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCount)).BeginInit();
             this.SuspendLayout();
@@ -59,41 +59,44 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // label1
+            // txtSTT
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Trạng thái :";
+            this.txtSTT.Location = new System.Drawing.Point(142, 24);
+            this.txtSTT.Name = "txtSTT";
+            this.txtSTT.Size = new System.Drawing.Size(296, 31);
+            this.txtSTT.TabIndex = 9;
             // 
-            // label2
+            // txtBan
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 67);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Bàn : ";
+            this.txtBan.Location = new System.Drawing.Point(142, 67);
+            this.txtBan.Name = "txtBan";
+            this.txtBan.Size = new System.Drawing.Size(296, 31);
+            this.txtBan.TabIndex = 8;
             // 
-            // label3
+            // cbbFood
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 108);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 25);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Món :";
+            this.cbbFood.FormattingEnabled = true;
+            this.cbbFood.Location = new System.Drawing.Point(142, 108);
+            this.cbbFood.Name = "cbbFood";
+            this.cbbFood.Size = new System.Drawing.Size(296, 33);
+            this.cbbFood.TabIndex = 7;
             // 
-            // label4
+            // nudCount
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 153);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 25);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Số lượng :";
+            this.nudCount.Location = new System.Drawing.Point(142, 147);
+            this.nudCount.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nudCount.Name = "nudCount";
+            this.nudCount.Size = new System.Drawing.Size(296, 31);
+            this.nudCount.TabIndex = 31;
+            this.nudCount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // btnAdd
             // 
@@ -105,34 +108,41 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // nudCount
+            // label4
             // 
-            this.nudCount.Location = new System.Drawing.Point(142, 147);
-            this.nudCount.Name = "nudCount";
-            this.nudCount.Size = new System.Drawing.Size(296, 31);
-            this.nudCount.TabIndex = 6;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(26, 153);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(94, 25);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Số lượng :";
             // 
-            // cbbFood
+            // label3
             // 
-            this.cbbFood.FormattingEnabled = true;
-            this.cbbFood.Location = new System.Drawing.Point(142, 108);
-            this.cbbFood.Name = "cbbFood";
-            this.cbbFood.Size = new System.Drawing.Size(296, 33);
-            this.cbbFood.TabIndex = 7;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(26, 108);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 25);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Món :";
             // 
-            // txtBan
+            // label2
             // 
-            this.txtBan.Location = new System.Drawing.Point(142, 67);
-            this.txtBan.Name = "txtBan";
-            this.txtBan.Size = new System.Drawing.Size(296, 31);
-            this.txtBan.TabIndex = 8;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(26, 67);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 25);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Bàn : ";
             // 
-            // txtSTT
+            // label1
             // 
-            this.txtSTT.Location = new System.Drawing.Point(142, 24);
-            this.txtSTT.Name = "txtSTT";
-            this.txtSTT.Size = new System.Drawing.Size(296, 31);
-            this.txtSTT.TabIndex = 9;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Trạng thái :";
             // 
             // AddFood
             // 

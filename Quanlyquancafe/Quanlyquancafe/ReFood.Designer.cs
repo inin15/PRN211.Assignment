@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cbbTable = new System.Windows.Forms.ComboBox();
-            this.cbbFood = new System.Windows.Forms.ComboBox();
-            this.txtTotal = new System.Windows.Forms.TextBox();
-            this.nudCount = new System.Windows.Forms.NumericUpDown();
-            this.nudCountReF = new System.Windows.Forms.NumericUpDown();
-            this.btnAccept = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnAccept = new System.Windows.Forms.Button();
+            this.nudCountReF = new System.Windows.Forms.NumericUpDown();
+            this.nudCount = new System.Windows.Forms.NumericUpDown();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.cbbFood = new System.Windows.Forms.ComboBox();
+            this.cbbTable = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCountReF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCount)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -69,41 +69,108 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Đổi trả";
             // 
-            // label1
+            // btnCancel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Số bàn :";
+            this.btnCancel.Location = new System.Drawing.Point(239, 253);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(112, 34);
+            this.btnCancel.TabIndex = 12;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // label2
+            // label6
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 84);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Tổng";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(323, 87);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(43, 25);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Vnđ";
             // 
-            // label3
+            // btnAccept
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 124);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 25);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Món trả :";
+            this.btnAccept.Location = new System.Drawing.Point(105, 253);
+            this.btnAccept.Name = "btnAccept";
+            this.btnAccept.Size = new System.Drawing.Size(112, 34);
+            this.btnAccept.TabIndex = 10;
+            this.btnAccept.Text = "Accept";
+            this.btnAccept.UseVisualStyleBackColor = true;
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click_1);
             // 
-            // label4
+            // nudCountReF
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 160);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 25);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Số lượng";
+            this.nudCountReF.Location = new System.Drawing.Point(135, 206);
+            this.nudCountReF.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nudCountReF.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudCountReF.Name = "nudCountReF";
+            this.nudCountReF.Size = new System.Drawing.Size(180, 31);
+            this.nudCountReF.TabIndex = 31;
+            this.nudCountReF.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // nudCount
+            // 
+            this.nudCount.Increment = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.nudCount.Location = new System.Drawing.Point(137, 160);
+            this.nudCount.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nudCount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudCount.Name = "nudCount";
+            this.nudCount.Size = new System.Drawing.Size(180, 31);
+            this.nudCount.TabIndex = 29;
+            this.nudCount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Location = new System.Drawing.Point(135, 84);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(182, 31);
+            this.txtTotal.TabIndex = 7;
+            // 
+            // cbbFood
+            // 
+            this.cbbFood.FormattingEnabled = true;
+            this.cbbFood.Location = new System.Drawing.Point(135, 121);
+            this.cbbFood.Name = "cbbFood";
+            this.cbbFood.Size = new System.Drawing.Size(182, 33);
+            this.cbbFood.TabIndex = 6;
+            this.cbbFood.SelectedIndexChanged += new System.EventHandler(this.cbbFood_SelectedIndexChanged);
+            // 
+            // cbbTable
+            // 
+            this.cbbTable.FormattingEnabled = true;
+            this.cbbTable.Location = new System.Drawing.Point(135, 44);
+            this.cbbTable.Name = "cbbTable";
+            this.cbbTable.Size = new System.Drawing.Size(182, 33);
+            this.cbbTable.TabIndex = 5;
+            this.cbbTable.SelectedIndexChanged += new System.EventHandler(this.cbbTable_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -115,72 +182,41 @@
             this.label5.Text = "Trả lại :";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // cbbTable
+            // label4
             // 
-            this.cbbTable.FormattingEnabled = true;
-            this.cbbTable.Location = new System.Drawing.Point(135, 44);
-            this.cbbTable.Name = "cbbTable";
-            this.cbbTable.Size = new System.Drawing.Size(182, 33);
-            this.cbbTable.TabIndex = 5;
-            this.cbbTable.SelectedIndexChanged += new System.EventHandler(this.cbbTable_SelectedIndexChanged);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(26, 160);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(85, 25);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Số lượng";
             // 
-            // cbbFood
+            // label3
             // 
-            this.cbbFood.FormattingEnabled = true;
-            this.cbbFood.Location = new System.Drawing.Point(135, 121);
-            this.cbbFood.Name = "cbbFood";
-            this.cbbFood.Size = new System.Drawing.Size(182, 33);
-            this.cbbFood.TabIndex = 6;
-            this.cbbFood.SelectedIndexChanged += new System.EventHandler(this.cbbFood_SelectedIndexChanged);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(27, 124);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(84, 25);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Món trả :";
             // 
-            // txtTotal
+            // label2
             // 
-            this.txtTotal.Location = new System.Drawing.Point(135, 84);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(182, 31);
-            this.txtTotal.TabIndex = 7;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(26, 84);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 25);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Tổng";
             // 
-            // nudCount
+            // label1
             // 
-            this.nudCount.Location = new System.Drawing.Point(137, 160);
-            this.nudCount.Name = "nudCount";
-            this.nudCount.Size = new System.Drawing.Size(180, 31);
-            this.nudCount.TabIndex = 8;
-            // 
-            // nudCountReF
-            // 
-            this.nudCountReF.Location = new System.Drawing.Point(135, 206);
-            this.nudCountReF.Name = "nudCountReF";
-            this.nudCountReF.Size = new System.Drawing.Size(180, 31);
-            this.nudCountReF.TabIndex = 9;
-            // 
-            // btnAccept
-            // 
-            this.btnAccept.Location = new System.Drawing.Point(105, 253);
-            this.btnAccept.Name = "btnAccept";
-            this.btnAccept.Size = new System.Drawing.Size(112, 34);
-            this.btnAccept.TabIndex = 10;
-            this.btnAccept.Text = "Accept";
-            this.btnAccept.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(323, 87);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 25);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Vnđ";
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(239, 253);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(112, 34);
-            this.btnCancel.TabIndex = 12;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Số bàn :";
             // 
             // ReFood
             // 
@@ -192,8 +228,8 @@
             this.Text = "Đổi trả món";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCountReF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCount)).EndInit();
             this.ResumeLayout(false);
 
         }

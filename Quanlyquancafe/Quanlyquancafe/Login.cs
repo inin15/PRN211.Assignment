@@ -41,7 +41,7 @@ namespace Quanlyquancafe
                 {
                     name = table.Rows[i][1].ToString();
                     type = table.Rows[i][3].ToString();
-                    MessageBox.Show("Xin chào " + name + " :)", "Đăng nhập thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Xin chào " + name + " nhé", "Đăng nhập thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return true;
                 }
             }
@@ -81,7 +81,11 @@ namespace Quanlyquancafe
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-
+            DialogResult ms = MessageBox.Show("Bạn có muốn thoát không? ", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (ms == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

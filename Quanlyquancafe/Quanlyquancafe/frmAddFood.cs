@@ -18,12 +18,12 @@ namespace Quanlyquancafe
             InitializeComponent();
         }
 
-        private void frmAddFood_Load(object sender, EventArgs e)
+        private void frmAdFood_Load(object sender, EventArgs e)
         {
-            Load();
+            load();
             setNameCategory();
         }
-        //cập nhât category để chọn
+        //cap nhat category de chon
         private void setNameCategory()
         {
             DBContext context = new DBContext();
@@ -33,8 +33,9 @@ namespace Quanlyquancafe
                 cbbAddCate.Items.Add(table.Rows[i][0].ToString());
             }
         }
-        //Hàm load thông tin
-        private void Load()
+
+        //ham load thong tin
+        private void load()
         {
             try
             {
@@ -47,6 +48,8 @@ namespace Quanlyquancafe
                 MessageBox.Show("Tải không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        //reset
         private void clear()
         {
             txtAddName.ResetText();
@@ -55,27 +58,27 @@ namespace Quanlyquancafe
             cbbAddCate.Focus();
         }
 
+        //click table
         private void dgvResult_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 if (e.RowIndex >= 0)
                 {
-
                     DataGridViewRow row = dgvResult.Rows[e.RowIndex];
                     txtAddName.Text = row.Cells[0].Value.ToString();
                     oldname = row.Cells[0].Value.ToString();
                     cbbAddCate.Text = row.Cells[1].Value.ToString();
                     nudAddPrice.Value = Int32.Parse(row.Cells[2].Value.ToString());
                 }
-
             }
             catch
             {
                 MessageBox.Show("Lỗi data!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        //Thêm món
+
+        //them mon
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
@@ -85,38 +88,40 @@ namespace Quanlyquancafe
                 float price = Convert.ToInt64(nudAddPrice.Value);
                 DBContext context = new DBContext();
                 context.AddFood(nameCate, name, price);
-                MessageBox.Show("Thêm món thành công", "Đã thêm món", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thêm thành công", "Đã thêm", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 clear();
-                Load();
+                load();
             }
             catch
             {
-                MessageBox.Show("Thêm món không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Thêm không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
+        //Xoa mon
         private void btnXoa_Click(object sender, EventArgs e)
         {
             try
             {
-                if (MessageBox.Show("Bạn có chắc chắn muốn xoá không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
-                { //Nếu nhấn yes
+                if (MessageBox.Show("Bạn có chắc xóa không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    //Nhan yes
                     string name = txtAddName.Text;
                     DBContext context = new DBContext();
                     context.DelFood(name);
-                    MessageBox.Show("Xoá món thành công", "Đã xoá", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Xóa thành công!", "Đã xóa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     clear();
-                    Load();
+                    load();
                 }
-                //Nếu nhấn no
+                //nhan no
             }
             catch
             {
-                MessageBox.Show("Xoá không thành công!", " Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Xóa không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        //Sửa món
+
+        //Sua mon
         private void btnLuu_Click(object sender, EventArgs e)
         {
             try
@@ -126,13 +131,13 @@ namespace Quanlyquancafe
                 float price = Convert.ToInt32(nudAddPrice.Value);
                 DBContext context = new DBContext();
                 context.UpdateFood(nameCate, newname, price, oldname);
-                MessageBox.Show("Sửa món thành công", "Đã sửa món", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Sửa thành công!", "Đã sửa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 clear();
-                Load();
+                load();
             }
             catch
             {
-                MessageBox.Show("Sửa món không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Sửa không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

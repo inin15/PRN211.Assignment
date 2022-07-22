@@ -38,7 +38,7 @@ namespace Quanlyquancafe
             }
 
         }
-        //àm mở bàn
+        //Hàm mở bàn
         public void openTable()
         {
             DBContext context = new DBContext();
@@ -66,13 +66,13 @@ namespace Quanlyquancafe
             try
             {
                 //Kiểm tra bàn trong k
-                if (txtSTT.Text == "Trong")
+                if (txtSTT.Text == "TRONG")
                 {
                     //Nếu bàn trống thì mở bàn mới và thêm món
                     openTable();
                     addFood();
                     this.Close();
-                }else if(txtSTT.Text == "Online")
+                }else if(txtSTT.Text == "ONLINE")
                 {
                     //Bàn đang hoạt động. chỉ thêm món
                     isCountFood();
@@ -114,7 +114,7 @@ namespace Quanlyquancafe
             }
         }
         //Hàm trả về đơn giá món hiện tại
-        private float getDongGia()
+        private float getDonGia()
         {
             DBContext context = new DBContext();
             DataTable table = context.getPrice(cbbFood.Text);
@@ -123,7 +123,7 @@ namespace Quanlyquancafe
         //Set Tông tiền
         private void setTotal()
         {
-            float total = getDongGia()*(float)nudCount.Value;
+            float total = getDonGia()*(float)nudCount.Value;
             DBContext context = new DBContext ();
             context.setTotal(txtBan.Text, float.Parse(total.ToString()));
         }

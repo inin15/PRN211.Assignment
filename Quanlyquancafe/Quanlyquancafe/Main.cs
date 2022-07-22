@@ -5,7 +5,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Quanlyquancafe
@@ -39,7 +38,7 @@ namespace Quanlyquancafe
         {
 
         }
-        
+        //Sự kiện thoát form
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn thoát?", "Thoát", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK)
@@ -268,7 +267,15 @@ namespace Quanlyquancafe
             }
             catch { }
         }
-
+        private void lbMedia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+               // wmpMedia.URL = filepaths[lbMedia.SelectedIndex];
+            }
+            catch
+            { }
+        }
         private void txtNameMan_Click(object sender, EventArgs e)
         {
 
@@ -313,7 +320,6 @@ namespace Quanlyquancafe
         //di den thang Account
         private void tmiAccount1_Click(object sender, EventArgs e)
         {
-           
                 try
                 {
                     Account frm = new Account();
@@ -474,16 +480,6 @@ namespace Quanlyquancafe
             catch { }
         }
 
-        private void lbMedia_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            try
-            {
-                //wmpMedia.URL = filepaths[lbMedia.SelectedIndex];
-            }
-            catch
-            { }
-        }
         //PrintDocument
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
@@ -575,6 +571,11 @@ namespace Quanlyquancafe
             loaddataFood(nameCate);
         }
 
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
         //Su kiem click btnFood
         private void btnFB_Click(object sender, EventArgs e)
         {
@@ -584,18 +585,12 @@ namespace Quanlyquancafe
         }
 
 
-        //Su kien thoat from
-        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("Bạn có muốn thoát?", "Thoát", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK)
-            {
-                e.Cancel = true;
-            }
-        }
+      
 
 
 
 
     }
+
 }
 

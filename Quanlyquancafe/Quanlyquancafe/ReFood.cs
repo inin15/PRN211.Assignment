@@ -63,8 +63,24 @@ namespace Quanlyquancafe
             nudCount.Value = Int16.Parse(datatable.Rows[cbbFood.SelectedIndex][1].ToString());
         }
 
+        
+        
+        //sua bill
+        private void reFood()
+        {
+            //sua bill
+            int count = Int16.Parse((nudCount.Value - nudCountReF.Value).ToString());
+            float total = float.Parse((float.Parse(txtTotal.Text) - float.Parse(datatable.Rows[cbbFood.SelectedIndex][2].ToString()) * (float)nudCountReF.Value).ToString());
+            DBContext context = new DBContext();
+            context.giammon(cbbTable.Text, cbbFood.Text, count, total);
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         //Nhan nut va thuc hien giam mon
-        private void btnAccept_Click(object sender, EventArgs e)
+        private void btnAccept_Click_1(object sender, EventArgs e)
         {
             if (nudCountReF.Value <= nudCount.Value && condition == true && cbbFood.Text != "")
             {
@@ -85,20 +101,6 @@ namespace Quanlyquancafe
             {
                 MessageBox.Show("Không thể giảm món!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
-        //sua bill
-        private void reFood()
-        {
-            //sua bill
-            int count = Int16.Parse((nudCount.Value - nudCountReF.Value).ToString());
-            float total = float.Parse((float.Parse(txtTotal.Text) - float.Parse(datatable.Rows[cbbFood.SelectedIndex][2].ToString()) * (float)nudCountReF.Value).ToString());
-            DBContext context = new DBContext();
-            context.giammon(cbbTable.Text, cbbFood.Text, count, total);
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

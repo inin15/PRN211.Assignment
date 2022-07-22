@@ -17,12 +17,12 @@ namespace Quanlyquancafe
         {
             InitializeComponent();
         }
-
         private void Account_Load(object sender, EventArgs e)
         {
-            Load();
+            load();
         }
-        private void Load()
+        //ham load thong tin
+        private void load()
         {
             DBContext context = new DBContext();
             DataTable table = context.loadAccount();
@@ -35,7 +35,6 @@ namespace Quanlyquancafe
             txtPassword.ResetText();
             cbAdmin.Checked = false;
         }
-
         private void dgvResult_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -51,53 +50,56 @@ namespace Quanlyquancafe
                     cbAdmin.Checked = false;
             }
         }
-        //thêm tài khoản
+
+        //Them tai khoan
         private void btnAdd_Click(object sender, EventArgs e)
-        { 
-            try { 
+        {
+            try
+            {
                 string username = txtUsername.Text;
                 string displayname = txtDisplayname.Text;
                 string password = txtPassword.Text;
-                string type = "CÁHIER";
+                string type = "CASHIER";
                 if (cbAdmin.Checked == true)
                 {
-                    type = "ADMIN"; // admin
+                    type = "ADMIN";        //admin 
                 }
                 DBContext context = new DBContext();
                 context.AddAccount(username, displayname, password, type);
-                MessageBox.Show("Thêm thành công!\n Tài khoản" + displayname + "đã được thêm", "Đã thêm", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Load();
+                MessageBox.Show("Thêm thành công!\n Tài khoản " + displayname + " đã được thêm.", "Đã thêm", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                load();
                 clear();
             }
             catch
             {
                 MessageBox.Show("Không thêm được", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-
             }
         }
 
+        //Xoa tai khoan
         private void btnXoa_Click(object sender, EventArgs e)
         {
             try
             {
-                if(MessageBox.Show("Bạn có chắc chắn muốn xoá tài khoản"+oldusername+"không?","Xác nhận",MessageBoxButtons.OK,MessageBoxIcon.Question)==System.Windows.Forms.DialogResult.Yes)
+                if (MessageBox.Show("Bạn có chắc xóa tài khoản " + oldusername + " không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    //Nhấn yes
+                    //Nhan yes
                     string name = txtUsername.Text;
                     DBContext context = new DBContext();
                     context.DelAccount(name);
-                    MessageBox.Show("Xoá thành công: \n Tài khoản" + name + " đã được xoá", "Đã xoá", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Load();
+                    MessageBox.Show("Xóa thành công!\n Tài khoản " + name + " đã được xóa.", "Đã xóa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    load();
                     clear();
-                }  //Nhấn no  
+                }
+                //nhan no
             }
             catch
             {
-                MessageBox.Show("Không xoá được", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Không xóa được", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        //Sua tai khoan
         private void btnSua_Click(object sender, EventArgs e)
         {
             try
@@ -105,28 +107,20 @@ namespace Quanlyquancafe
                 string newusername = txtUsername.Text;
                 string newdisplayname = txtDisplayname.Text;
                 string newpassword = txtPassword.Text;
-                string type = "CÁHIER";
-                if(cbAdmin.Checked == true)
+                string type = "CASHIER";
+                if (cbAdmin.Checked == true)
                 {
                     type = "ADMIN";
                 }
                 DBContext context = new DBContext();
                 context.UpdateAccount(newusername, newdisplayname, newpassword, type, oldusername);
-                MessageBox.Show("Chỉnh sửa thành công: \n Tài khoản" + oldusername + "đã chỉnh sửa.", "Đã sửa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Load();
+                MessageBox.Show("Chỉnh sửa thành công!\n Tài khoản " + oldusername + " đã chỉnh sửa.", "Đã sửa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                load();
                 clear();
             }
             catch
             {
-                MessageBox.Show("Không sửa được!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        //Su kien thoat from
-        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("Bạn có muốn thoát?", "Thoát", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK)
-            {
-                e.Cancel = true;
+                MessageBox.Show("Không sữa được!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -55,8 +55,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblName = new System.Windows.Forms.Label();
             this.btnBlock = new System.Windows.Forms.Button();
-            this.btnReplaceTable = new System.Windows.Forms.Button();
-            this.btnPlusTable = new System.Windows.Forms.Button();
             this.btnPay = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnAddFood = new System.Windows.Forms.Button();
@@ -143,32 +141,32 @@
             this.tmiCaNhan,
             this.tmiHistory});
             this.tmiViews.Name = "tmiViews";
-            this.tmiViews.Size = new System.Drawing.Size(270, 34);
+            this.tmiViews.Size = new System.Drawing.Size(260, 34);
             this.tmiViews.Text = "Xem lịch sử";
             // 
             // tmiCaNhan
             // 
             this.tmiCaNhan.Name = "tmiCaNhan";
-            this.tmiCaNhan.Size = new System.Drawing.Size(270, 34);
+            this.tmiCaNhan.Size = new System.Drawing.Size(256, 34);
             this.tmiCaNhan.Text = "Thông tin cá nhân";
             // 
             // tmiHistory
             // 
             this.tmiHistory.Name = "tmiHistory";
-            this.tmiHistory.Size = new System.Drawing.Size(270, 34);
+            this.tmiHistory.Size = new System.Drawing.Size(256, 34);
             this.tmiHistory.Text = "Lịch sử truy cập";
             // 
             // tmiChange
             // 
             this.tmiChange.Name = "tmiChange";
-            this.tmiChange.Size = new System.Drawing.Size(270, 34);
+            this.tmiChange.Size = new System.Drawing.Size(260, 34);
             this.tmiChange.Text = "Thay đổi thông tin";
             this.tmiChange.Click += new System.EventHandler(this.tmiChange_Click);
             // 
             // tmiLogout
             // 
             this.tmiLogout.Name = "tmiLogout";
-            this.tmiLogout.Size = new System.Drawing.Size(270, 34);
+            this.tmiLogout.Size = new System.Drawing.Size(260, 34);
             this.tmiLogout.Text = "Đăng xuất";
             this.tmiLogout.Click += new System.EventHandler(this.tmiLogout_Click);
             // 
@@ -305,6 +303,8 @@
             // 
             // pnlTable
             // 
+            this.pnlTable.AllowDrop = true;
+            this.pnlTable.AutoScroll = true;
             this.pnlTable.Location = new System.Drawing.Point(12, 26);
             this.pnlTable.Name = "pnlTable";
             this.pnlTable.Size = new System.Drawing.Size(642, 210);
@@ -314,8 +314,6 @@
             // 
             this.groupBox3.Controls.Add(this.lblName);
             this.groupBox3.Controls.Add(this.btnBlock);
-            this.groupBox3.Controls.Add(this.btnReplaceTable);
-            this.groupBox3.Controls.Add(this.btnPlusTable);
             this.groupBox3.Controls.Add(this.btnPay);
             this.groupBox3.Controls.Add(this.btnReturn);
             this.groupBox3.Controls.Add(this.btnAddFood);
@@ -346,27 +344,9 @@
             this.btnBlock.TabIndex = 8;
             this.btnBlock.UseVisualStyleBackColor = true;
             // 
-            // btnReplaceTable
-            // 
-            this.btnReplaceTable.Location = new System.Drawing.Point(302, 189);
-            this.btnReplaceTable.Name = "btnReplaceTable";
-            this.btnReplaceTable.Size = new System.Drawing.Size(138, 34);
-            this.btnReplaceTable.TabIndex = 7;
-            this.btnReplaceTable.Text = "Chuyển bàn";
-            this.btnReplaceTable.UseVisualStyleBackColor = true;
-            // 
-            // btnPlusTable
-            // 
-            this.btnPlusTable.Location = new System.Drawing.Point(16, 265);
-            this.btnPlusTable.Name = "btnPlusTable";
-            this.btnPlusTable.Size = new System.Drawing.Size(112, 34);
-            this.btnPlusTable.TabIndex = 6;
-            this.btnPlusTable.Text = "Gộp bàn";
-            this.btnPlusTable.UseVisualStyleBackColor = true;
-            // 
             // btnPay
             // 
-            this.btnPay.Location = new System.Drawing.Point(160, 265);
+            this.btnPay.Location = new System.Drawing.Point(310, 189);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(124, 34);
             this.btnPay.TabIndex = 5;
@@ -406,22 +386,26 @@
             // 
             // btnMediaList
             // 
+            this.btnMediaList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMediaList.Location = new System.Drawing.Point(408, 38);
             this.btnMediaList.Name = "btnMediaList";
             this.btnMediaList.Size = new System.Drawing.Size(41, 34);
-            this.btnMediaList.TabIndex = 1;
+            this.btnMediaList.TabIndex = 48;
             this.btnMediaList.Text = "List";
             this.btnMediaList.UseVisualStyleBackColor = true;
             this.btnMediaList.Click += new System.EventHandler(this.button1_Click);
             // 
             // lbMedia
             // 
+            this.lbMedia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbMedia.FormattingEnabled = true;
             this.lbMedia.ItemHeight = 25;
             this.lbMedia.Location = new System.Drawing.Point(6, 30);
             this.lbMedia.Name = "lbMedia";
             this.lbMedia.Size = new System.Drawing.Size(386, 129);
-            this.lbMedia.TabIndex = 0;
+            this.lbMedia.TabIndex = 50;
+            this.lbMedia.Visible = false;
             this.lbMedia.SelectedIndexChanged += new System.EventHandler(this.lbMedia_SelectedIndexChanged);
             // 
             // groupBox4
@@ -436,6 +420,7 @@
             // 
             // pnlCategory
             // 
+            this.pnlCategory.AutoScroll = true;
             this.pnlCategory.Location = new System.Drawing.Point(15, 27);
             this.pnlCategory.Name = "pnlCategory";
             this.pnlCategory.Size = new System.Drawing.Size(317, 84);
@@ -605,7 +590,7 @@
             // 
             this.tsmThemMon.Name = "tsmThemMon";
             this.tsmThemMon.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.tsmThemMon.Size = new System.Drawing.Size(240, 32);
+            this.tsmThemMon.Size = new System.Drawing.Size(209, 32);
             this.tsmThemMon.Text = "Thêm món";
             this.tsmThemMon.Click += new System.EventHandler(this.tsmThemMon_Click);
             // 
@@ -613,7 +598,7 @@
             // 
             this.tsmThanhToan.Name = "tsmThanhToan";
             this.tsmThanhToan.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.tsmThanhToan.Size = new System.Drawing.Size(240, 32);
+            this.tsmThanhToan.Size = new System.Drawing.Size(209, 32);
             this.tsmThanhToan.Text = "Thanh toán";
             this.tsmThanhToan.Click += new System.EventHandler(this.tsmThanhToan_Click);
             // 
@@ -642,7 +627,7 @@
             // 
             this.tsmTraMon.Name = "tsmTraMon";
             this.tsmTraMon.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.tsmTraMon.Size = new System.Drawing.Size(240, 32);
+            this.tsmTraMon.Size = new System.Drawing.Size(209, 32);
             this.tsmTraMon.Text = "Trả món";
             this.tsmTraMon.Click += new System.EventHandler(this.tsmTraMon_Click);
             // 
@@ -661,7 +646,7 @@
             // 
             this.tmsThemMon2.Name = "tmsThemMon2";
             this.tmsThemMon2.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.tmsThemMon2.Size = new System.Drawing.Size(240, 32);
+            this.tmsThemMon2.Size = new System.Drawing.Size(237, 32);
             this.tmsThemMon2.Text = "Thêm món mới";
             this.tmsThemMon2.Click += new System.EventHandler(this.tmsThemMon2_Click);
             // 
@@ -669,7 +654,7 @@
             // 
             this.tsmDatBan.Name = "tsmDatBan";
             this.tsmDatBan.ShortcutKeys = System.Windows.Forms.Keys.F11;
-            this.tsmDatBan.Size = new System.Drawing.Size(240, 32);
+            this.tsmDatBan.Size = new System.Drawing.Size(237, 32);
             this.tsmDatBan.Text = "Đặt giữ bàn";
             this.tsmDatBan.Click += new System.EventHandler(this.tsmDatBan_Click);
             // 
@@ -687,7 +672,7 @@
             // 
             this.tsmMoBan.Name = "tsmMoBan";
             this.tsmMoBan.ShortcutKeys = System.Windows.Forms.Keys.F12;
-            this.tsmMoBan.Size = new System.Drawing.Size(240, 32);
+            this.tsmMoBan.Size = new System.Drawing.Size(236, 32);
             this.tsmMoBan.Text = "Mở khoá bàn ";
             this.tsmMoBan.Click += new System.EventHandler(this.tsmMoBan_Click);
             // 
@@ -702,7 +687,8 @@
             // ofdMedia
             // 
             this.ofdMedia.FileName = "Media";
-            this.ofdMedia.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            this.ofdMedia.Filter = "Mp3|*.mp3|Wav|*.wav|Mp4|*.mp4|3gp|*.3gp";
+            this.ofdMedia.Multiselect = true;
             // 
             // frmMain
             // 
@@ -719,6 +705,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -767,8 +754,6 @@
         private System.Windows.Forms.ListBox lbMedia;
         private System.Windows.Forms.Panel pnlTable;
         private System.Windows.Forms.Button btnBlock;
-        private System.Windows.Forms.Button btnReplaceTable;
-        private System.Windows.Forms.Button btnPlusTable;
         private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Panel pnlCategory;
