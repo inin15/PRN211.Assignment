@@ -16,5 +16,39 @@ namespace Quanlyquancafe
         {
             InitializeComponent();
         }
+        public ChangePersional(string user, string name,string pass) : this()
+        {
+            //load thông tin lên
+            txtUser.Text = user;
+            txtName.Text = name;
+            txtPass.Text = pass;    
+        }
+        //Đóng
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        //Hàm lưu thông tin mới
+        private void Save(string user, string name,string pass)
+        {
+            DBContext context = new DBContext();
+            context.resetAccount(name, pass, user);
+        }
+        //Lưu thông tin mới
+        
+        private void btnXacNhan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Save(txtUser.Text, txtName.Text, txtPass.Text);
+                MessageBox.Show("Đã thay đổi","OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+
+            }
+            catch
+            {
+                MessageBox.Show("Thông tin không hợp lệ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
