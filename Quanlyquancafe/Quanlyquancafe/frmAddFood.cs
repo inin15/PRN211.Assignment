@@ -5,7 +5,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Quanlyquancafe
@@ -17,12 +16,14 @@ namespace Quanlyquancafe
         {
             InitializeComponent();
         }
-
-        private void frmAdFood_Load(object sender, EventArgs e)
+        private void frmAddFood_Load(object sender, EventArgs e)
         {
+
             load();
             setNameCategory();
         }
+
+
         //cap nhat category de chon
         private void setNameCategory()
         {
@@ -34,6 +35,7 @@ namespace Quanlyquancafe
             }
         }
 
+        //ham load thong tin
         //ham load thong tin
         private void load()
         {
@@ -59,24 +61,7 @@ namespace Quanlyquancafe
         }
 
         //click table
-        private void dgvResult_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                if (e.RowIndex >= 0)
-                {
-                    DataGridViewRow row = dgvResult.Rows[e.RowIndex];
-                    txtAddName.Text = row.Cells[0].Value.ToString();
-                    oldname = row.Cells[0].Value.ToString();
-                    cbbAddCate.Text = row.Cells[1].Value.ToString();
-                    nudAddPrice.Value = Int32.Parse(row.Cells[2].Value.ToString());
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Lỗi data!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        
 
         //them mon
         private void btnAdd_Click(object sender, EventArgs e)
@@ -140,6 +125,27 @@ namespace Quanlyquancafe
                 MessageBox.Show("Sửa không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        //click table
+        private void dgvResult_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = dgvResult.Rows[e.RowIndex];
+                    txtAddName.Text = row.Cells[0].Value.ToString();
+                    oldname = row.Cells[0].Value.ToString();
+                    cbbAddCate.Text = row.Cells[1].Value.ToString();
+                    nudAddPrice.Value = Int32.Parse(row.Cells[2].Value.ToString());
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi data!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+      
     }
 }
 

@@ -208,6 +208,103 @@ namespace Quanlyquancafe
             {
             }
         }
+        private void btnTable_MouseClick(object sender, EventArgs e)
+        {
+            ClickTable(sender, e);
+        }
+        private void ClickTable(object sender, EventArgs e)
+        {
+            //tra ve trang thai ban theo mau sac cua btnTable
+            if (((Button)sender).BackColor.ToString() == "Color [Snow]")
+            {
+                txtSTT.Text = "TRONG";
+            }
+            else if (((Button)sender).BackColor.ToString() == "Color [Lime]")
+            {
+                txtSTT.Text = "ONLINE";
+            }
+            else if (((Button)sender).BackColor.ToString() == "Color [Red]")
+            {
+                txtSTT.Text = "DATTRUOC";
+            }
+            //tra ve ten ban
+            txtNameTable.Text = ((Button)sender).Text;
+            //Tra ve tong tien
+            txtTotal.Text = ((Button)sender).Tag.ToString();
+            loaddataBill();
+        }
+        //Su kien click btnCATEGORY
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            string nameCate = ((Button)sender).Text;
+            //Load mon theo yeu cau click cua Category
+            loaddataFood(nameCate);
+        }
+
+        //Su kiem click btnFood
+        private void btnFB_Click(object sender, EventArgs e)
+        {
+            //Gan text button mon an => text groupbox . cho no dep
+            txtNameFood.Text = ((Button)sender).Text;
+            txtPriceFood.Text = ((Button)sender).Tag.ToString();
+        }
+        //Ham xu ly Category
+        private void tmiCategory_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmAddCategory frm = new frmAddCategory();
+                frm.ShowDialog();
+                this.Show();
+                loaddataCategory();
+            }
+            catch { }
+        }
+
+        //di den quan ly food
+        private void tmiFood_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmAddFood frm = new frmAddFood();
+                frm.ShowDialog();
+                this.Show();
+                loaddataCategory();
+            }
+            catch { }
+        }
+        //di den quan ly table
+        private void tmiTable_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmAddTables frm = new frmAddTables();
+                frm.ShowDialog();
+                this.Show();
+                loaddataTable();
+            }
+            catch { }
+        }
+        //di den thang Account
+        private void tmiAccount1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Account frm = new Account();
+                frm.ShowDialog();
+                this.Show();
+
+            }
+            catch { }
+        }
+        //Neu kich thuoc table thay doi thi load lai table cho phu hop
+        private void gpbTable_SizeChanged(object sender, EventArgs e)
+        {
+            loaddataTable();
+        }
+
+
+
 
         private void btnAddFood_Click(object sender, EventArgs e)
         {
@@ -244,100 +341,6 @@ namespace Quanlyquancafe
             }
             catch { }
         }
-
-        //     Media
-        string[] filenames, filepaths;
-        private void btnAddMedia_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (ofdMedia.ShowDialog() == DialogResult.OK)
-                {
-                    //Mang file name se hung tat ca ten
-                    filenames = ofdMedia.SafeFileNames;
-                    //Mang file path se hung tat ca duong dan file
-                    filepaths = ofdMedia.FileNames;
-                    //Them file name vao listview
-                    lbMedia.Items.Clear();
-                    foreach (String file in filenames)
-                    {
-                        lbMedia.Items.Add(file);
-                    }
-                }
-            }
-            catch { }
-        }
-        private void lbMedia_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-               // wmpMedia.URL = filepaths[lbMedia.SelectedIndex];
-            }
-            catch
-            { }
-        }
-        private void txtNameMan_Click(object sender, EventArgs e)
-        {
-
-        }
-        //Ham xu ly Category
-
-        private void tmiCategory_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                frmAddCategory frm = new frmAddCategory();
-                frm.ShowDialog();
-                this.Show();
-                loaddataCategory();
-            }
-            catch { }
-        }
-        //di den quan ly food
-        private void tmiFood_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                frmAddFood frm = new frmAddFood();
-                frm.ShowDialog();
-                this.Show();
-                loaddataCategory();
-            }
-            catch { }
-        }
-        //di den quan ly table
-        private void tmiTable_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                frmAddTables frm = new frmAddTables();
-                frm.ShowDialog();
-                this.Show();
-                loaddataTable();
-            }
-            catch { }
-        }
-        //di den thang Account
-        private void tmiAccount1_Click(object sender, EventArgs e)
-        {
-                try
-                {
-                    Account frm = new Account();
-                    frm.ShowDialog();
-                    this.Show();
-                }
-                catch { }
-            }
-        //Neu kich thuoc table thay doi thi load lai table cho phu hop
-        private void gpbTable_SizeChanged(object sender, EventArgs e)
-        {
-            loaddataTable();
-        }
-
-        private void gpbTable_Enter(object sender, EventArgs e)
-        {
-
-        }
         //Nhan nut thanh toan
         private void btnPay_Click(object sender, EventArgs e)
         {
@@ -366,6 +369,48 @@ namespace Quanlyquancafe
             }
             catch { }
         }
+        //     Media
+        string[] filenames, filepaths;
+        private void btnAddMedia_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ofdMedia.ShowDialog() == DialogResult.OK)
+                {
+                    //Mang file name se hung tat ca ten
+                    filenames = ofdMedia.SafeFileNames;
+                    //Mang file path se hung tat ca duong dan file
+                    filepaths = ofdMedia.FileNames;
+                    //Them file name vao listview
+                    lbMedia.Items.Clear();
+                    foreach (String file in filenames)
+                    {
+                        lbMedia.Items.Add(file);
+                    }
+                }
+            }
+            catch { }
+        }
+        private void lbMedia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                // wmpMedia.URL = filepaths[lbMedia.SelectedIndex];
+            }
+            catch
+            { }
+        }
+        private void txtNameMan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void gpbTable_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         //tra mon
         private void btnReturn_Click(object sender, EventArgs e)
         {
@@ -415,7 +460,18 @@ namespace Quanlyquancafe
         //Logout
         private void tmiLogout_Click(object sender, EventArgs e)
         {
-            this.Close();
+
+            DialogResult dg = MessageBox.Show("Bạn có chắc muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dg == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+            // this.Close();
+        }
+        //load context menu ban online
+        private void cmnSubTable_Opening(object sender, CancelEventArgs e)
+        {
+
         }
         //menu context SubTable
         private void tsmThemMon_Click(object sender, EventArgs e)
@@ -437,11 +493,7 @@ namespace Quanlyquancafe
         {
 
         }
-        //load context menu ban online
-        private void cmnSubTable_Opening(object sender, CancelEventArgs e)
-        {
 
-        }
         //Context Menu ban trong
         private void cmnSubTable2_Opening(object sender, CancelEventArgs e)
         {
@@ -538,54 +590,15 @@ namespace Quanlyquancafe
         //Su kien Mouseclick vao btnTABLE
 
 
-        private void btnTable_MouseClick(object sender, EventArgs e)
-        {
-            ClickTable(sender, e);
-        }
-        private void ClickTable(object sender, EventArgs e)
-        {
-            //tra ve trang thai ban theo mau sac cua btnTable
-            if (((Button)sender).BackColor.ToString() == "Color [Snow]")
-            {
-                txtSTT.Text = "TRONG";
-            }
-            else if (((Button)sender).BackColor.ToString() == "Color [Lime]")
-            {
-                txtSTT.Text = "ONLINE";
-            }
-            else if (((Button)sender).BackColor.ToString() == "Color [Red]")
-            {
-                txtSTT.Text = "DATTRUOC";
-            }
-            //tra ve ten ban
-            txtNameTable.Text = ((Button)sender).Text;
-            //Tra ve tong tien
-            txtTotal.Text = ((Button)sender).Tag.ToString();
-            loaddataBill();
-        }
-        //Su kien click btnCATEGORY
-        private void btnCategory_Click(object sender, EventArgs e)
-        {
-            string nameCate = ((Button)sender).Text;
-            //Load mon theo yeu cau click cua Category
-            loaddataFood(nameCate);
-        }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
 
         }
 
-        //Su kiem click btnFood
-        private void btnFB_Click(object sender, EventArgs e)
-        {
-            //Gan text button mon an => text groupbox . cho no dep
-            txtNameFood.Text = ((Button)sender).Text;
-            txtPriceFood.Text = ((Button)sender).Tag.ToString();
-        }
 
 
-      
+
 
 
 

@@ -141,7 +141,7 @@
             this.tmiCaNhan,
             this.tmiHistory});
             this.tmiViews.Name = "tmiViews";
-            this.tmiViews.Size = new System.Drawing.Size(260, 34);
+            this.tmiViews.Size = new System.Drawing.Size(369, 34);
             this.tmiViews.Text = "Xem lịch sử";
             // 
             // tmiCaNhan
@@ -159,14 +159,19 @@
             // tmiChange
             // 
             this.tmiChange.Name = "tmiChange";
-            this.tmiChange.Size = new System.Drawing.Size(260, 34);
+            this.tmiChange.ShortcutKeyDisplayString = "";
+            this.tmiChange.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.C)));
+            this.tmiChange.Size = new System.Drawing.Size(370, 34);
             this.tmiChange.Text = "Thay đổi thông tin";
             this.tmiChange.Click += new System.EventHandler(this.tmiChange_Click);
             // 
             // tmiLogout
             // 
             this.tmiLogout.Name = "tmiLogout";
-            this.tmiLogout.Size = new System.Drawing.Size(260, 34);
+            this.tmiLogout.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.L)));
+            this.tmiLogout.Size = new System.Drawing.Size(369, 34);
             this.tmiLogout.Text = "Đăng xuất";
             this.tmiLogout.Click += new System.EventHandler(this.tmiLogout_Click);
             // 
@@ -184,28 +189,32 @@
             // tmiCategory
             // 
             this.tmiCategory.Name = "tmiCategory";
-            this.tmiCategory.Size = new System.Drawing.Size(274, 34);
+            this.tmiCategory.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.tmiCategory.Size = new System.Drawing.Size(337, 34);
             this.tmiCategory.Text = "Danh mục";
             this.tmiCategory.Click += new System.EventHandler(this.tmiCategory_Click);
             // 
             // tmiFood
             // 
             this.tmiFood.Name = "tmiFood";
-            this.tmiFood.Size = new System.Drawing.Size(274, 34);
+            this.tmiFood.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
+            this.tmiFood.Size = new System.Drawing.Size(337, 34);
             this.tmiFood.Text = "Danh sách món";
             this.tmiFood.Click += new System.EventHandler(this.tmiFood_Click);
             // 
             // tmiTable
             // 
             this.tmiTable.Name = "tmiTable";
-            this.tmiTable.Size = new System.Drawing.Size(274, 34);
+            this.tmiTable.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
+            this.tmiTable.Size = new System.Drawing.Size(337, 34);
             this.tmiTable.Text = "Danh sách bàn";
             this.tmiTable.Click += new System.EventHandler(this.tmiTable_Click);
             // 
             // tmiAccount1
             // 
             this.tmiAccount1.Name = "tmiAccount1";
-            this.tmiAccount1.Size = new System.Drawing.Size(274, 34);
+            this.tmiAccount1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
+            this.tmiAccount1.Size = new System.Drawing.Size(337, 34);
             this.tmiAccount1.Text = "Danh sách tài khoản";
             this.tmiAccount1.Click += new System.EventHandler(this.tmiAccount1_Click);
             // 
@@ -456,6 +465,7 @@
             // 
             // pnlFood
             // 
+            this.pnlFood.AutoScroll = true;
             this.pnlFood.Location = new System.Drawing.Point(12, 106);
             this.pnlFood.Name = "pnlFood";
             this.pnlFood.Size = new System.Drawing.Size(315, 123);

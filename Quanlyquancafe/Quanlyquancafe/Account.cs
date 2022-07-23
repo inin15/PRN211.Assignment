@@ -37,6 +37,7 @@ namespace Quanlyquancafe
         }
         private void dgvResult_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgvResult.Rows[e.RowIndex];
@@ -123,5 +124,7 @@ namespace Quanlyquancafe
                 MessageBox.Show("Không sữa được!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+       
     }
 }
